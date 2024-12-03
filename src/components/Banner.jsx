@@ -34,7 +34,7 @@ const Banner = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: false, amount: 0.7 }}
-              className="text-[40px] sm:text-[55px] lg:text-[110px] font-bold leading-[0.8] pb-6 pt-6 sm:pt-0"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 text-[40px] sm:text-[55px] lg:text-[110px] font-bold leading-[0.8] pb-6 pt-6 sm:pt-0"
             >
               SUJAY PAGAM
             </motion.h1>
@@ -45,12 +45,12 @@ const Banner = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: false, amount: 0.7 }}
-              className="mb-6 text-[28px] sm:text-[36px] lg:text-[60px] font-secondary font-semibold leading-3"
+              className="text-purple-400 mb-6 text-[28px] sm:text-[36px] lg:text-[60px] font-secondary font-semibold leading-3"
             >
               <span>I am a </span>
               <TypeAnimation
-                sequence={["Developer", 2000, "", 100]}
-                speed={50}
+                sequence={["Developer", "Coder", "Programmer", 2000, "", 50]}
+                speed={300}
                 repeat={Infinity}
                 className="text-accent"
                 wrapper="span"
@@ -63,7 +63,7 @@ const Banner = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: false, amount: 0.7 }}
-              className="mb-8 max-w-lg mx-auto lg:mx-0 text-lg"
+              className="text-gray-200 mb-8 max-w-lg mx-auto lg:mx-0 text-lg"
             >
               I'm a frontend web developer passionate about creating dynamic and
               user-friendly websites. Always eager to learn, I explore new
