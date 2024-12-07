@@ -1,30 +1,31 @@
 import React from "react";
-import project1 from "../assets/project1.png";
-import project2 from "../assets/project2.png";
-import project3 from "../assets/project3.jpg";
 import { motion } from "framer-motion";
+import { FaEye } from "react-icons/fa";
 
 const projectsData = [
   {
-    name: "Crypto Wave",
-    description:
-      "This project helps you to get live cryptocurrency data from around the world.",
-    github: "https://github.com/5ujay/crypto-wave",
-    image: project1,
+    name: "Be Fit",
+    link: "https://befit-va2m.onrender.com/",
   },
   {
     name: "BGMI CLONE",
-    description:
-      "I love the BGMI (PUBG) game, so I thought let's make a clone of their website in React.",
-    github: "https://github.com/5ujay/bgmi-clone",
-    image: project2,
+    link: "https://bgmi-web-clone.netlify.app/",
   },
   {
-    name: "Fitness Guide App",
-    description:
-      "A React Native fitness guide app, featuring detailed workout videos to effectively train every major muscle group.",
-    github: "https://github.com/5ujay/native-fitness-app",
-    image: project3,
+    name: "Crypto Wave",
+    link: "https://crytpo-wave-frontend.onrender.com/",
+  },
+  {
+    name: "Spotify Clone",
+    link: "https://spotifyycloneweb.netlify.app/",
+  },
+  {
+    name: "Weather App",
+    link: "https://weather-check-karo-app.netlify.app/",
+  },
+  {
+    name: "Servive Nest",
+    link: "https://smart-home-nextjs14.vercel.app/",
   },
 ];
 
@@ -32,35 +33,46 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="section py-10 flex items-center justify-center text-white"
+      className="section py-20 bg-gray-900 text-white flex items-center justify-center"
     >
-      <div className="flex flex-col">
-        <h2 className="text-4xl font-bold text-center mb-10">My Projects</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+      <div className="flex flex-col max-w-6xl w-full px-4">
+        <h2 className="text-4xl font-bold text-center mb-10 text-gradient">
+          My Projects
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {projectsData.map((project, index) => (
             <motion.div
               key={project.name}
-              initial={{ opacity: 0, y: 20 }} // Start slightly below and invisible
-              whileInView={{ opacity: 1, y: 0 }} // Fade in and move to original position
-              transition={{ duration: 0.5, delay: index * 0.1 }} // Staggered effect
-              className="btn text-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeInOut",
+              }}
+              className="bg-gradient-to-r from-purple-600 to-indigo-800 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
             >
-              <img
-                src={project.image}
-                alt={project.name}
-                className="w-full h-72 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-black hover:underline"
+              <div className="space-y-4">
+                <motion.h3
+                  className="text-2xl font-semibold"
+                  whileHover={{ scale: 1.05 }}
                 >
-                  View on GitHub
-                </a>
+                  {project.name}
+                </motion.h3>
+
+                {/* Live Icon with External Link */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-lg font-semibold text-indigo-300">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-indigo-300 hover:text-indigo-500 transition-colors"
+                    >
+                      <FaEye className="mr-2" /> Live
+                    </a>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
